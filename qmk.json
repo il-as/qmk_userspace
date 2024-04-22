@@ -1,4 +1,6 @@
 {
     "userspace_version": "1.0",
-    "build_targets": []
+    "build_targets": [
+        ["keychron/q11/ansi_encoder", "ecpgpp_qwerty_lafayette"]
+    ]
 }
