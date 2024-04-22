@@ -199,6 +199,7 @@ const key_override_t US_EXLM_key_override = ko_make_with_layers(MOD_MASK_SHIFT, 
 
 // Key override for shifted keys in ALL layers
 const key_override_t US_END_key_override = ko_make_basic(MOD_MASK_CTRL, KC_HOME, KC_END);
+const key_override_t US_DEL_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]) {
@@ -223,6 +224,7 @@ const key_override_t **key_overrides = (const key_override_t *[]) {
     &US_EXLM_key_override,
 
     &US_END_key_override,
+    &US_DEL_key_override,
     NULL // Null terminate the array of overrides!
 };
 
@@ -235,10 +237,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,  KC_BSLS,            KC_PGDN,
         _______,  KC_CAPS,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,      KC_H,     KC_J,     KC_K,     KC_L,     OSL(DK1), US_QUOT,              KC_ENT,             KC_HOME,
         _______,  KC_LSFT,            KC_Z,     KC_X,     KC_C,     KC_V,      KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,
-        _______,  KC_LCTL,  KC_LOPT,  KC_LCMD,  MO(MAC_FN),         KC_SPC,                        KC_SPC,           MO(ALT_GR), MO(MAC_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
+        _______,  KC_LCTL,  KC_LOPT,  KC_LCMD,  MO(MAC_FN),         KC_SPC,                        KC_BSPC,          MO(ALT_GR), MO(MAC_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
     /* NOTE: MAC_BASE layer
      * ┌───┐ ┌───┬───┬───┬───┬───┬───┬───┐        ┌───┬───┬───┬───┬───┬───┬───┬───┐ ┌───┐
-     * │ O │ │Esc│F1 │F2 │F3 │F4 │F5 │F6 │        │F7 │F8 │F9 │F10│F11│F12│Ins│Del│ │ O │
+     * │MUT│ │Esc│F1 │F2 │F3 │F4 │F5 │F6 │        │F7 │F8 │F9 │F10│F11│F12│Ins│Del│ │MUT│
      * └───┘ └───┴───┴───┴───┴───┴───┴───┘        └───┴───┴───┴───┴───┴───┴───┴───┘ └───┘
      * ┌───┐ ┌───┬───┬───┬───┬───┬───┬───┐        ┌───┬───┬───┬───┬───┬───┬───────┐ ┌───┐
      * │M1 │ │ ` │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │        │ 7 │ 8 │ 9 │ 0 │ - │ = │Bkspc  │ │PGU│
@@ -249,15 +251,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├───┤ ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐      └─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬─┬─┴─┼───┘
      * │M4 │ │Sft     │ Z │ X │ C │ V │ B │        │ N │ M │ , │ . │ / │Shift │ │Up │
      * ├───┤ ├────┬───┴┬──┴─┬─┴──┬┴───┴───┤        ├───┴───┴──┬┴──┬┴──┬┴──┬─┬─┴─┼───┼───┐
-     * │M5 │ │Ctrl│GUI │CMD │ FN │Space   │        │Space     │Alt│Fn1│Ctr│ │Lft│Dwn│Rig│
+     * │M5 │ │Ctrl│GUI │CMD │ FN │Space   │        │Bkspc Del │Alt│Fn1│Ctr│ │Lft│Dwn│Rig│
      * └───┘ └────┴────┴────┴────┴────────┘        └──────────┴───┴───┴───┘ └───┴───┴───┘
      */
 
     [MAC_FN] = LAYOUT_91_ansi(
-        RGB_TOG,  _______,  KC_BRID,  KC_BRIU,  KC_MCTL,  KC_LPAD,  RGB_VAD,   RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,    KC_VOLU,  _______,   _______,   RGB_TOG,
+        RGB_TOG,  _______,  KC_BRID,  KC_BRIU,  KC_MCTL,  KC_LPAD,  RGB_VAD,   RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,    KC_VOLU,  _______,  _______,  RGB_TOG,
         _______,  _______,  _______,  _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  _______,  _______,    _______,  _______,            _______,
         _______,  RGB_TOG,  RGB_MOD,  RGB_VAI,  RGB_HUI,  RGB_SAI,  RGB_SPI,   _______,  _______,  _______,  _______,  _______,  _______,    _______,  _______,            _______,
-        _______,  _______,  RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,   _______,  _______,  _______,  _______,  _______,  _______,              _______,            _______,
+        _______,  _______,  RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,   KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  _______,  _______,              _______,            _______,
         _______,  _______,            _______,  _______,  _______,  _______,   _______,  NK_TOGG,  _______,  _______,  _______,  _______,              _______,  _______,
         _______,  _______,  _______,  _______,  _______,            _______,                       _______,            _______,  _______,    _______,  _______,  _______,  _______),
      /* NOTE: MAC_FN layer
@@ -269,7 +271,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├───┤ ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┘      ┌─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤ ├───┤
      * │   │ │RGBtg│mod│VA+│HU+│SA+│SP+│        │   │   │   │   │   │   │   │     │ │   │
      * ├───┤ ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┐       └┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤ ├───┤
-     * │   │ │      │Rmd│VA-│HU-│SA-│SP-│        │   │   │   │   │   │   │        │ │   │
+     * │   │ │      │Rmd│VA-│HU-│SA-│SP-│        │Lft│Dwn│Up │Rgt│   │   │        │ │   │
      * ├───┤ ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐      └─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬─┬─┴─┼───┘
      * │   │ │        │   │   │   │   │   │        │NKt│   │   │   │   │      │ │   │
      * ├───┤ ├────┬───┴┬──┴─┬─┴──┬┴───┴───┤        ├───┴───┴──┬┴──┬┴──┬┴──┬─┬─┴─┼───┼───┐
@@ -283,7 +285,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  KC_TAB,   US_AE,    US_EACU,  US_EGRV,  US_EDIA,  US_MINS,   US_UDIA,  US_UGRV,  US_IDIA,  US_OE,    KC_NO,    KC_NO,      KC_NO,    KC_NO,              KC_PGDN,
         _______,  KC_CAPS,  US_AGRV,  US_SS,    US_ECFX,  US_MINS,  KC_NO,     US_YCFX,  US_UCFX,  US_ICFX,  US_OCFX,  OSL(DK2), KC_NO,                KC_ENT,             KC_HOME,
         _______,  KC_LSFT,            US_ACFX,  US_MUL,   US_CCED,  US_UNDS,   KC_NO,    US_NTIL,  US_MICR,  US_ITPT,  KC_NO,    US_DIV,               KC_RSFT,  KC_UP,
-        _______,  KC_LCTL,  KC_LOPT,  KC_LCMD,  MO(MAC_FN),         KC_SPC,                        KC_SPC,             KC_RALT,  MO(MAC_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
+        _______,  KC_LCTL,  KC_LOPT,  KC_LCMD,  MO(MAC_FN),         KC_SPC,                        KC_BSPC,            KC_RALT,  MO(MAC_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
     /* NOTE: Dead Key 1 layer
      * ┌───┐ ┌───┬───┬───┬───┬───┬───┬───┐        ┌───┬───┬───┬───┬───┬───┬───┬───┐ ┌───┐
      * │MUT│ │Esc│F1 │F2 │F3 │F4 │F5 │F6 │        │F7 │F8 │F9 │F10│F11│F12│Ins│Del│ │MUT│
@@ -297,7 +299,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├───┤ ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐      └─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬─┬─┴─┼───┘
      * │M4 │ │Sft     │ Â │ × │ Ç │ _ │   │        │ Ñ │ µ │ · │   │ ÷¿│Shift │ │Up │
      * ├───┤ ├────┬───┴┬──┴─┬─┴──┬┴───┴───┤        ├───┴───┴──┬┴──┬┴──┬┴──┬─┬─┴─┼───┼───┐
-     * │M5 │ │Ctrl│GUI │CMD │ FN │Space   │        │Space     │Cmd│Fn1│Ctr│ │Lft│Dwn│Rig│
+     * │M5 │ │Ctrl│GUI │CMD │ FN │Space   │        │Bkspc Del │Cmd│Fn1│Ctr│ │Lft│Dwn│Rig│
      * └───┘ └────┴────┴────┴────┴────────┘        └──────────┴───┴───┴───┘ └───┴───┴───┘
      * For now, capitalised versions of è à ù need to be done with caps lock.
      */
@@ -308,7 +310,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  KC_TAB,   KC_NO,    US_WDIA,  US_EDIA,  KC_NO,    US_TDIA,   US_YDIA,  US_UDIA,  US_IDIA,  US_ODIA,  KC_NO,    KC_NO,      KC_NO,    KC_NO,              KC_PGDN,
         _______,  KC_CAPS,  US_ADIA,  KC_NO,    KC_NO,    KC_NO,    KC_NO,     US_HDIA,  KC_NO,    KC_NO,    KC_NO,    KC_SCLN,  KC_NO,                KC_ENT,             KC_HOME,
         _______,  KC_LSFT,            KC_NO,    US_XDIA,  KC_NO,    KC_NO,     KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                KC_RSFT,  KC_UP,
-        _______,  KC_LCTL,  KC_LOPT,  KC_LCMD,  MO(MAC_FN),         KC_SPC,                        KC_SPC,             KC_RALT,  MO(MAC_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
+        _______,  KC_LCTL,  KC_LOPT,  KC_LCMD,  MO(MAC_FN),         KC_SPC,                        KC_BSPC,            KC_RALT,  MO(MAC_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
     /* INFO: Dead Key 2 layer
      * ┌───┐ ┌───┬───┬───┬───┬───┬───┬───┐        ┌───┬───┬───┬───┬───┬───┬───┬───┐ ┌───┐
      * │MUT│ │Esc│F1 │F2 │F3 │F4 │F5 │F6 │        │F7 │F8 │F9 │F10│F11│F12│Ins│Del│ │MUT│
@@ -322,7 +324,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├───┤ ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐      └─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬─┬─┴─┼───┘
      * │   │ │Sft     │   │ Ẍ │   │   │   │        │   │   │   │   │   │Shift │ │Up │
      * ├───┤ ├────┬───┴┬──┴─┬─┴──┬┴───┴───┤        ├───┴───┴──┬┴──┬┴──┬┴──┬─┬─┴─┼───┼───┐
-     * │   │ │Ctrl│GUI │CMD │ FN │Space   │        │Space     │Cmd│Fn1│Ctr│ │Lft│Dwn│Rig│
+     * │   │ │Ctrl│GUI │CMD │ FN │Space   │        │Bkspc Del │Cmd│Fn1│Ctr│ │Lft│Dwn│Rig│
      * └───┘ └────┴────┴────┴────┴────────┘        └──────────┴───┴───┴───┘ └───┴───┴───┘
      * S(ẗ) does't work, it doesn't exist in the us intl keymap
      */
@@ -334,10 +336,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,  KC_BSLS,            KC_PGDN,
         _______,  KC_CAPS,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,      KC_H,     KC_J,     KC_K,     KC_L,     OSL(DK1), US_QUOT,              KC_ENT,             KC_HOME,
         _______,  KC_LSFT,            KC_Z,     KC_X,     KC_C,     KC_V,      KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,
-        _______,  KC_LCTL,  KC_LWIN,  KC_LALT,  MO(WIN_FN),         KC_SPC,                        KC_SPC,           MO(ALT_GR), MO(WIN_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
+        _______,  KC_LCTL,  KC_LWIN,  KC_LALT,  MO(WIN_FN),         KC_SPC,                        KC_BSPC,          MO(ALT_GR), MO(WIN_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
     /* INFO: WIN_BASE layer
      * ┌───┐ ┌───┬───┬───┬───┬───┬───┬───┐        ┌───┬───┬───┬───┬───┬───┬───┬───┐ ┌───┐
-     * │ O │ │Esc│F1 │F2 │F3 │F4 │F5 │F6 │        │F7 │F8 │F9 │F10│F11│F12│Ins│Del│ │ O │
+     * │MUT│ │Esc│F1 │F2 │F3 │F4 │F5 │F6 │        │F7 │F8 │F9 │F10│F11│F12│Ins│Del│ │MUT│
      * └───┘ └───┴───┴───┴───┴───┴───┴───┘        └───┴───┴───┴───┴───┴───┴───┴───┘ └───┘
      * ┌───┐ ┌───┬───┬───┬───┬───┬───┬───┐        ┌───┬───┬───┬───┬───┬───┬───────┐ ┌───┐
      * │M1 │ │ ` │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │        │ 7 │ 8 │ 9 │ 0 │ - │ = │Bkspc  │ │PGU│
@@ -348,7 +350,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├───┤ ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐      └─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬─┬─┴─┼───┘
      * │M4 │ │Sft     │ Z │ X │ C │ V │ B │        │ N │ M │ , │ . │ / │Shift │ │Up │
      * ├───┤ ├────┬───┴┬──┴─┬─┴──┬┴───┴───┤        ├───┴───┴──┬┴──┬┴──┬┴──┬─┬─┴─┼───┼───┐
-     * │M5 │ │Ctrl│Win │ALT │ FN │Space   │        │Space     │ALG│Fn1│Ctr│ │Lft│Dwn│Rig│
+     * │M5 │ │Ctrl│Win │ALT │ FN │Space   │        │Bkspc Del │ALG│Fn1│Ctr│ │Lft│Dwn│Rig│
      * └───┘ └────┴────┴────┴────┴────────┘        └──────────┴───┴───┴───┘ └───┴───┴───┘
      */
 
@@ -356,7 +358,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         RGB_TOG,  _______,  KC_BRID,  KC_BRIU,  KC_TASK,  KC_FLXP,  RGB_VAD,   RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,    KC_VOLU,  _______,  _______,  RGB_TOG,
         _______,  _______,  _______,  _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  _______,  _______,    _______,  _______,            _______,
         _______,  RGB_TOG,  RGB_MOD,  RGB_VAI,  RGB_HUI,  RGB_SAI,  RGB_SPI,   _______,  _______,  _______,  _______,  _______,  _______,    _______,  _______,            _______,
-        _______,  _______,  RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,   _______,  _______,  _______,  _______,  _______,  _______,              _______,            _______,
+        _______,  _______,  RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,   KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  _______,  _______,              _______,            _______,
         _______,  _______,            _______,  _______,  _______,  _______,   _______,  NK_TOGG,  _______,  _______,  _______,  _______,              _______,  _______,
         _______,  _______,  _______,  _______,  _______,            _______,                       _______,            _______,  _______,    _______,  _______,  _______,  _______),
     /* INFO: WIN_FN layer (RGB and media control)
@@ -368,7 +370,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├───┤ ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┘      ┌─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤ ├───┤
      * │   │ │RGBtg│Mod│VA+│HU+│SA+│SP+│        │   │   │   │   │   │   │   │     │ │   │
      * ├───┤ ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┐       └┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤ ├───┤
-     * │   │ │      │Rmd│VA-│HU-│SA-│SP-│        │   │   │   │   │   │   │        │ │   │
+     * │   │ │      │Rmd│VA-│HU-│SA-│SP-│        │Lft│Dwn│Up │Rig│   │   │        │ │   │
      * ├───┤ ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐      └─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬─┬─┴─┼───┘
      * │   │ │        │   │   │   │   │   │        │NKt│   │   │   │   │      │ │   │
      * ├───┤ ├────┬───┴┬──┴─┬─┴──┬┴───┴───┤        ├───┴───┴──┬┴──┬┴──┬┴──┬─┬─┴─┼───┼───┐
@@ -382,10 +384,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  KC_TAB,   KC_AT,    KC_LT,    KC_GT,    KC_DLR,   KC_PERC,   US_CIRC,  KC_AMPR,  KC_PAST,  US_QUOT,  US_GRV,   KC_NO,      KC_NO,    KC_NO,              KC_PGDN,
         _______,  KC_CAPS,  KC_LCBR,  KC_LPRN,  KC_RPRN,  KC_RCBR,  KC_EQL,    KC_BSLS,  US_PLUS,  KC_PMNS,  KC_SLSH,  US_DQUO,  KC_NO,                KC_ENT,             KC_HOME,
         _______,  KC_LSFT,            US_TILD,  KC_LBRC,  KC_RBRC,  KC_UNDS,  KC_HASH,   KC_PIPE,  KC_EXLM,  US_SCLN,  US_COLN,  US_QUES,              KC_RSFT,  KC_UP,
-        _______,  KC_LCTL,  KC_LGUI,  KC_LCMD,  MO(MAC_FN),         KC_SPC,                        KC_SPC,             KC_RALT,  MO(MAC_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
+        _______,  KC_LCTL,  KC_LGUI,  KC_LCMD,  MO(MAC_FN),         KC_SPC,                        KC_BSPC,            KC_RALT,  MO(MAC_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
      /* INFO : ALT_GR (dev special chars) layer
       * ┌───┐ ┌───┬───┬───┬───┬───┬───┬───┐        ┌───┬───┬───┬───┬───┬───┬───┬───┐ ┌───┐
-      * │ O │ │Esc│F1 │F2 │F3 │F4 │F5 │F6 │        │F7 │F8 │F9 │F10│F11│F12│Ins│Del│ │ O │
+      * │MUT│ │Esc│F1 │F2 │F3 │F4 │F5 │F6 │        │F7 │F8 │F9 │F10│F11│F12│Ins│Del│ │MUT│
       * └───┘ └───┴───┴───┴───┴───┴───┴───┘        └───┴───┴───┴───┴───┴───┴───┴───┘ └───┘
       * ┌───┐ ┌───┬───┬───┬───┬───┬───┬───┐        ┌───┬───┬───┬───┬───┬───┬───────┐ ┌───┐
       * │   │ │   │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │        │ 7 │ 8 │ 9 │ 0 │ - │ = │Bkspc  │ │PGU│
@@ -396,7 +398,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       * ├───┤ ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐      └─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬─┬─┴─┼───┘
       * │   │ │Sft     │ ~ │ [ │ ] │ _ │ # │        │ |¦│ ! │ ; │ : │ ? │Shift │ │Up │
       * ├───┤ ├────┬───┴┬──┴─┬─┴──┬┴───┴───┤        ├───┴───┴──┬┴──┬┴──┬┴──┬─┬─┴─┼───┼───┐
-      * │   │ │Ctrl│GUI │CMD │ FN │Space   │        │Space     │ALT│Fn1│Ctr│ │Lft│Dwn│Rig│
+      * │   │ │Ctrl│GUI │CMD │ FN │Space   │        │Bkspc Del │ALT│Fn1│Ctr│ │Lft│Dwn│Rig│
       * └───┘ └────┴────┴────┴────┴────────┘        └──────────┴───┴───┴───┘ └───┴───┴───┘
       */
 };

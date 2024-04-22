@@ -42,7 +42,7 @@ The function row was changed from standard F1 to F12 to mac specific keycodes
     ├───┤ ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐      └─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬─┬─┴─┼───┘
     │M4 │ │Sft     │ Z │ X │ C │ V │ B │        │ N │ M │ , │ . │ / │Shift │ │Up │
     ├───┤ ├────┬───┴┬──┴─┬─┴──┬┴───┴───┤        ├───┴───┴──┬┴──┬┴──┬┴──┬─┬─┴─┼───┼───┐
-    │M5 │ │Ctrl│GUI │CMD │ FN │Space   │        │Space     │Alt│Fn1│Ctr│ │Lft│Dwn│Rig│
+    │M5 │ │Ctrl│GUI │CMD │ FN │Space   │        │Bkspc Del │Alt│Fn1│Ctr│ │Lft│Dwn│Rig│
     └───┘ └────┴────┴────┴────┴────────┘        └──────────┴───┴───┴───┘ └───┴───┴───┘
 
 #### MAC_FN (RGB and media control)
@@ -54,7 +54,7 @@ The function row was changed from standard F1 to F12 to mac specific keycodes
     ├───┤ ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┘      ┌─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤ ├───┤
     │   │ │RGBtg│mod│VA+│HU+│SA+│SP+│        │   │   │   │   │   │   │   │     │ │   │
     ├───┤ ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┐       └┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤ ├───┤
-    │   │ │      │Rmd│VA-│HU-│SA-│SP-│        │   │   │   │   │   │   │        │ │   │
+    │   │ │      │Rmd│VA-│HU-│SA-│SP-│        │Lft│Dwn│Up │Rgt│   │   │        │ │   │
     ├───┤ ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐      └─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬─┬─┴─┼───┘
     │   │ │        │   │   │   │   │   │        │NKt│   │   │   │   │      │ │   │
     ├───┤ ├────┬───┴┬──┴─┬─┴──┬┴───┴───┤        ├───┴───┴──┬┴──┬┴──┬┴──┬─┬─┴─┼───┼───┐
@@ -74,7 +74,7 @@ The function row was changed from standard F1 to F12 to mac specific keycodes
     ├───┤ ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐      └─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬─┬─┴─┼───┘
     │M4 │ │Sft     │ Â │ × │ Ç │ _ │   │        │ Ñ │ µ │ · │   │ ÷¿│Shift │ │Up │
     ├───┤ ├────┬───┴┬──┴─┬─┴──┬┴───┴───┤        ├───┴───┴──┬┴──┬┴──┬┴──┬─┬─┴─┼───┼───┐
-    │M5 │ │Ctrl│GUI │CMD │ FN │Space   │        │Space     │Cmd│Fn1│Ctr│ │Lft│Dwn│Rig│
+    │M5 │ │Ctrl│GUI │CMD │ FN │Space   │        │Bkspc Del │Cmd│Fn1│Ctr│ │Lft│Dwn│Rig│
     └───┘ └────┴────┴────┴────┴────────┘        └──────────┴───┴───┴───┘ └───┴───┴───┘
     Note: For now, capitalised versions of è à ù need to be done with caps lock.
      
@@ -91,7 +91,7 @@ The function row was changed from standard F1 to F12 to mac specific keycodes
     ├───┤ ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐      └─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬─┬─┴─┼───┘
     │   │ │Sft     │   │ Ẍ │   │   │   │        │   │   │   │   │   │Shift │ │Up │
     ├───┤ ├────┬───┴┬──┴─┬─┴──┬┴───┴───┤        ├───┴───┴──┬┴──┬┴──┬┴──┬─┬─┴─┼───┼───┐
-    │   │ │Ctrl│GUI │CMD │ FN │Space   │        │Space     │Cmd│Fn1│Ctr│ │Lft│Dwn│Rig│
+    │   │ │Ctrl│GUI │CMD │ FN │Space   │        │Bkspc Del │Cmd│Fn1│Ctr│ │Lft│Dwn│Rig│
     └───┘ └────┴────┴────┴────┴────────┘        └──────────┴───┴───┴───┘ └───┴───┴───┘
     Note: S(ẗ) does't work, it doesn't exist in the us intl keymap
 
@@ -108,7 +108,7 @@ The function row was changed from standard F1 to F12 to mac specific keycodes
     ├───┤ ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐      └─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬─┬─┴─┼───┘
     │M4 │ │Sft     │ Z │ X │ C │ V │ B │        │ N │ M │ , │ . │ / │Shift │ │Up │
     ├───┤ ├────┬───┴┬──┴─┬─┴──┬┴───┴───┤        ├───┴───┴──┬┴──┬┴──┬┴──┬─┬─┴─┼───┼───┐
-    │M5 │ │Ctrl│Win │ALT │ FN │Space   │        │Space     │ALG│Fn1│Ctr│ │Lft│Dwn│Rig│
+    │M5 │ │Ctrl│Win │ALT │ FN │Space   │        │Bkspc Del │ALG│Fn1│Ctr│ │Lft│Dwn│Rig│
     └───┘ └────┴────┴────┴────┴────────┘        └──────────┴───┴───┴───┘ └───┴───┴───┘
      
 #### WIN_FN (RGB and media control)
@@ -120,7 +120,7 @@ The function row was changed from standard F1 to F12 to mac specific keycodes
     ├───┤ ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┘      ┌─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤ ├───┤
     │   │ │RGBtg│Mod│VA+│HU+│SA+│SP+│        │   │   │   │   │   │   │   │     │ │   │
     ├───┤ ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┐       └┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤ ├───┤
-    │   │ │      │Rmd│VA-│HU-│SA-│SP-│        │   │   │   │   │   │   │        │ │   │
+    │   │ │      │Rmd│VA-│HU-│SA-│SP-│        │Lft│Dwn│Up │Rgt│   │   │        │ │   │
     ├───┤ ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐      └─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬─┬─┴─┼───┘
     │   │ │        │   │   │   │   │   │        │NKt│   │   │   │   │      │ │   │
     ├───┤ ├────┬───┴┬──┴─┬─┴──┬┴───┴───┤        ├───┴───┴──┬┴──┬┴──┬┴──┬─┬─┴─┼───┼───┐
@@ -140,7 +140,7 @@ The function row was changed from standard F1 to F12 to mac specific keycodes
     ├───┤ ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐      └─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬─┬─┴─┼───┘
     │   │ │Sft     │ ~ │ [ │ ] │ _ │ # │        │ |¦│ ! │ ; │ : │ ? │Shift │ │Up │
     ├───┤ ├────┬───┴┬──┴─┬─┴──┬┴───┴───┤        ├───┴───┴──┬┴──┬┴──┬┴──┬─┬─┴─┼───┼───┐
-    │   │ │Ctrl│GUI │CMD │ FN │Space   │        │Space     │ALT│Fn1│Ctr│ │Lft│Dwn│Rig│
+    │   │ │Ctrl│GUI │CMD │ FN │Space   │        │Bkspc Del │ALT│Fn1│Ctr│ │Lft│Dwn│Rig│
     └───┘ └────┴────┴────┴────┴────────┘        └──────────┴───┴───┴───┘ └───┴───┴───┘
 ### Optimisations
 
