@@ -146,12 +146,12 @@ The function row was changed from standard F1 to F12 to mac specific keycodes
 
 Plans are made to evolve the keymap to use the split keyboard layout better
 #### Done
-+ there is no End key so a shortcut was added `Ctrl + Home` : `End`
-
++ There is no End key so a shortcut was added `Ctrl + Home` : `End`
++ Right space was replaced with Backspace
++ `Shift` + `backspace` : `Del`
++ in Fn layers, `left, down, up, right` is added on `h, j, k, l` location
 #### Planned
-+ move the backspace closer to home row (on the right space key)
 + make `shift + Space` output a non breaking space
-+ move del to somewhere less stupid (`shift + backspace`)
 + add unicode inputs for chars not present in the us international keymap
 ## Currently known bugs
 ### exclamation on dead key
