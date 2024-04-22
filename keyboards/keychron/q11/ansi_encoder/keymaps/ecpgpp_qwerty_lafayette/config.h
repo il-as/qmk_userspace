@@ -1,0 +1,2 @@
+#define TAPPING_TERM 10
+#define ONESHOT_TAP_TOGGLE 20
