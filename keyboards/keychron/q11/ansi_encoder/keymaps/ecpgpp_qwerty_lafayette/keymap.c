@@ -400,7 +400,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_MUTE,  KC_ESC,   KC_BRID,  KC_BRIU,  KC_MCTL,  KC_LPAD,  RGB_VAD,   RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,    KC_VOLU,  KC_INS,   KC_DEL,   KC_MUTE,
         US_PLUS,  KC_NO,    KC_1,     KC_2,     KC_3,     KC_4,     KC_5,      KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_PGUP,
         KC_PMNS,  KC_TAB,   KC_AT,    KC_LT,    KC_GT,    KC_DLR,   KC_PERC,   US_CIRC,  KC_AMPR,  KC_PAST,  US_QUOT,  US_GRV,   KC_NO,      KC_NO,    KC_NO,              KC_PGDN,
-        KC_PAST,  KC_CAPS,  KC_LCBR,  KC_LPRN,  KC_RPRN,  KC_RCBR,  KC_EQL,    KC_BSLS,  US_PLUS,  KC_PMNS,  KC_SLSH,  US_SCLN,  US_QUOT,              KC_NO,              KC_HOME,
+        KC_PAST,  KC_CAPS,  KC_LCBR,  KC_LPRN,  KC_RPRN,  KC_RCBR,  KC_EQL,    KC_BSLS,  US_PLUS,  KC_PMNS,  KC_SLSH,  US_SCLN,  US_DQUO,              KC_NO,              KC_HOME,
         _______,  KC_LSFT,            US_TILD,  KC_LBRC,  KC_RBRC,  KC_UNDS,  KC_HASH,   KC_PIPE,  KC_EXLM,  US_SCLN,  US_COLN,  US_QUES,              KC_RSFT,  KC_UP,
         _______,  KC_LCTL,  KC_LGUI,  KC_LCMD,  MO(MAC_FN),         KC_SPC,                        KC_BSPC,            KC_RALT,  MO(MAC_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
      /* INFO : ALT_GR (dev special chars) layer
@@ -412,7 +412,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       * ├───┤ ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┘      ┌─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤ ├───┤
       * │ - │ │Tab  │ @ │ < │ > │ $ │ % │        │ ^ │ & │ *×│ ' │ ` │   │   │     │ │PGD│
       * ├───┤ ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┐       └┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤ ├───┤
-      * │ * │ │Caps  │ { │ ( │ ) │ } │ = │        │ \ │ +±│ - │ /÷│ " │   │    Ent │ │HOM│
+      * │ * │ │Caps  │ { │ ( │ ) │ } │ = │        │ \ │ +±│ - │ /÷│ ;:│ " │    Ent │ │HOM│
       * ├───┤ ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐      └─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬─┬─┴─┼───┘
       * │   │ │Sft     │ ~ │ [ │ ] │ _ │ # │        │ |¦│ ! │ ; │ : │ ? │Shift │ │Up │
       * ├───┤ ├────┬───┴┬──┴─┬─┴──┬┴───┴───┤        ├───┴───┴──┬┴──┬┴──┬┴──┬─┬─┴─┼───┼───┐
